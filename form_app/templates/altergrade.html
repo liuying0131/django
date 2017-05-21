@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}修改学生成绩{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        <form action="" method="POST">{% csrf_token %}
+             <div class="form-group">
+                <label for="stuid">学号</label>
+                <input type="text" class="form-control" name="stuid" placeholder="如010101">
+            </div>
+            <div class="form-group">
+                <label for="academy">学院</label>
+                <input type="text" class="form-control" name="acaname" placeholder="如01">
+            </div>
+            <div class="form-group">
+                <label for="username">姓名</label>
+                <input type="text" class="form-control" name="username" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="grade1">英语</label>
+                <input type="text" class="form-control"name="grade1" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="grade2">高数</label>
+                <input type="text" class="form-control"name="grade2" placeholder="">
+
+            </div>
+            <div class="form-group">
+                <label for="sex">大物</label>
+                <input type="text" class="form-control"name="grade3" placeholder="">
+
+            </div>
+            <button type="submit" value="Save" class="btn btn-default">AITER</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="form-inline myform" action="" method="GET">{% csrf_token %}
+        <div class="form-group">
+            <label for="stuid">请输入您的学号：</label>
+            <input type="text" class="form-control" id="stuid" name="stuid" placeholder="如：01">
+        </div>
+
+        <button type="submit" class="btn btn-default">查询评价</button>
+    </form>
+
+    <!-- 下面是表格 -->
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>学号</th>
+            <th>身体素质</th>
+            <th>学习成绩</th>
+            <th>思想道德</th>
+            <th>组织能力</th>
+            <th>总分</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in reviewlist %}
+            <tr>
+                <td>{{ i.student}}</td>
+                <td>{{ i.index1 }}</td>
+                <td>{{ i.index2 }}</td>
+                <td>{{ i.index3 }}</td>
+                <td>{{ i.index4 }}</td>
+                <td>{{i.index1|add:i.index2|add:i.index3|add:i.index4 }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

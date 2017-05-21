@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="content">
+        <form action="" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <label for="academy">学院</label>
+                <input type="text" class="form-control" name="newacaname" placeholder="如01">
+            </div>
+            <div class="form-group">
+                <label for="class">班级</label>
+                <input type="text" class="form-control" name="newclassnum" placeholder="如01">
+            </div>
+            <div class="form-group">
+                <label for="stuid">学号</label>
+                <input type="text" class="form-control" name="newstuid" placeholder="如010101">
+            </div>
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" class="form-control"name="newusername" placeholder="姓名">
+            </div>
+            <div class="form-group">
+                <label for="sex">性别</label>
+                <input type="text" class="form-control"name="newsex" placeholder="男或者女">
+
+            </div>
+
+            <button type="submit" value="Save" class="btn btn-default">AITER</button>
+        </form>
+    </div>
+
+{% endblock %}

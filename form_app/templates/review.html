@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}对他人进行评价{% endblock %}
+
+{% block content %}
+
+
+    <!-- 下面是表格 -->
+    <div class="content">
+        <form class="table table-bordered" ACTION="" METHOD="POST">
+            <div class="form-group">
+            <label for="stuid">请输入选评学号：</label>
+            <input type="text" class="form-control" id="stuid" name="stuid" placeholder="如：010101">
+        </div>
+            <div class="form-group">
+                <label for="index1">学习成绩：</label>
+                <input type="text" class="form-control" id="index1" name="index1" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="index2">体育成绩：</label>
+                <input type="text" class="form-control" id="index2" name="index2" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="index2">思想品德：</label>
+                <input type="text" class="form-control" id="index3" name="index3" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="index2">组织能力：</label>
+                <input type="text" class="form-control" id="index4" name="index4" placeholder="">
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+{% endblock %}
