@@ -1,35 +1,29 @@
-<div id="change-password-dialog">
-    <form id="change-password-form" method="post" class="mws-form" action=''>
-    {{  username }}
-{#        {% csrf_token %}#}
-{#        {% if form.non_field_errors %}#}
-{#            <div id="mws-validate-error" class="mws-form-message error">{{ form.non_field_errors }}</div>#}
-{#        {% endif %}#}
-        <div class="mws-form-inline ">
-            <div class="mws-form-row form-control">
-                <label class="mws-form-label">新密码</label>
-                <div class="mws-form-item large">
-                    <input type="password" name='newpwd' id='newpassword' style="width:120px;"/>
-                    <div class="error-messages">
+{% extends 'base.html' %}
+{% block content %}
 
-                    </div>
-                </div>
-            </div>
-            <div class="mws-form-row" >
-                <label class="mws-form-label">重新输入新密码</label>
-                <div class="mws-form-item large">
-                    <input type="password" id='newpwd' name='renewpassword' style="width:120px;"/>
-                    <div class="error-messages">
-                        {% if form.renewpassword.errors %}
-                            <label for="renewpassword" generated="true" class="error"
-                                   style="">{{ form.renewpassword.errors }}</label>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+<div id="change-password-dialog" class="content">
+    <form id="change-password-form" method="post" class="form-inline myfor" action=''>
+
+        <div class="form-group">
+            <label class="">新密码</label>
+            <input type="password" class="form-control" name='newpwd' id='newpassword' style="width:120px;"/>
         </div>
-    <button type="submit" >提交</button>
+        <div class="form-group">
+            <label class="">重新输入新密码</label>
+            <input type="password" id='newpwd' class="form-control" name='renewpassword' style="width:120px;"/>
+        </div>
+        <button type="submit" class="changepwd-submit  btn btn-primary">提交</button>
     </form>
 
-
 </div>
+<script>
+    $('.changepwd-submit').on(click, function () {
+        var pwd1 = $('#newpassword').val();
+        var pwd2 = $('#renewpassword').val();
+        if (pwd1 != pwd2) {
+            alert('两次输入的密码不相等！，请重新输入！');
+            location.reload();
+        }
+    })
+</script>
+{% endblock %}

@@ -8,11 +8,21 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
+    body{
+        height:100%;
+        background: #eee;
+                /*#FFF0F5*/
+    }
     .index-bar {
         text-align: center;
         border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
     }
 
+    .index-title{
+        color: #FFF;
+        text-shadow: 1px  1px #000;
+    }
     .index-block {
         float: right;
         padding-right: 12px;
@@ -24,25 +34,32 @@
 
     .selection-bar {
         width: 1000px;
-        margin: 0 auto;
+        margin: 10px auto;
     }
 
     .content {
         width: 1000px;
-        margin: 50px auto;
+        margin: 20px auto;
+    }
+
+    .myform{
+        padding-bottom: 20px;
+        text-align: center;
     }
 </style>
 
 <body>
 <p class="index-bar h1">
-    学生综合信息管理系统
+     <span class="index-title">学生综合信息管理系统</span>
     <a href="http://127.0.0.1:8000/logout" class="index-btn btn btn-primary">退出 </a>
     <span class="index-block h4">
        	welcome ,{{ username }}
        </span>
 </p>
 <div class="selection-bar">
-    <ul class="nav nav-pills" role="tablist">
+    <nav class="navbar navbar-inverse">
+
+    <ul class="nav navbar-nav" role="tablist">
         <li role="presentation" class="active"><a href="#">主页</a></li>
         <li role="presentation" class="dropdown">
             <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -114,7 +131,9 @@
             </ul>
         </li>
     </ul>
+    </nav>
 </div>
+
 {% block content %}
     <div class="content">这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
 {% endblock %}
