@@ -174,11 +174,9 @@ def editgrade(req):
     usertype = req.COOKIES.get('usertype')
     if delstuid:  # 如果有delstuid 视作删除,这是 ajax传过来的请求做的处理
         gradelist = Grade.objects.filter(stuid=delstuid).delete()
-
     elif stuid:  # 如果有stuid 视做查询,
         gradelist = Grade.objects.filter(stuid=stuid).order_by('stuid')
     elif alterstuid:
-
         gradelist = Grade.objects.filter(stuid=alterstuid).delete()
     else:
         gradelist = Grade.objects.all().order_by('stuid')

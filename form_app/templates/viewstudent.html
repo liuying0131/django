@@ -202,9 +202,9 @@
                                     {% if usertype == "1" %}
 
                 <td>
-                    <a href="#" class="del" data-i="{{ i.stuid }}">删除</a>
+                    <a href="#" class="del label label label-warning" data-i="{{ i.stuid }}">删除</a>
                     |
-                    <a href="/index/editstudent" class="edit" nid="{{ i.id }}">编辑</a>
+                    <a href="/index/editstudent?nid={{i.id}}" class="edit label label-primary">编辑</a>
                 </td>
                                 {% endif %}
 
